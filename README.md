@@ -1,3 +1,5 @@
+https://img.shields.io/badge/Astro-React-green?style=flat&logo=Astro
+
 # Nombre del proyecto
 
 En este web-site, la agencia de viajes y turismo le muestra a los potenciales clientes las rutas disponibles en la línea de cruceros.
