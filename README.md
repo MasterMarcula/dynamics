@@ -1,4 +1,4 @@
-https://img.shields.io/badge/Astro-React-green?style=flat&logo=Astro
+![Astro](https://img.shields.io/badge/Astro-React-green?style=flat&logo=Astro)
 
 # Nombre del proyecto
 
