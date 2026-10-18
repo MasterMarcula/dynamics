@@ -1,0 +1,102 @@
+---
+// src/pages/rutas/[id].astro
+import BaseLayout from '../../layouts/BaseLayouts.astro';
+// Importamos el JSON local como si fuera un módulo de JavaScript
+import ciudadesData from '../../data/ciudades.json';
+console.log(ciudadesData);
+
+export async function getStaticPaths() {
+  const rutasDetalladas = [
+    {
+      id: "rhin",
+      nombre: "Rhin",
+      descripcion: "El tramo del Valle del Rin Medio es legendario. Declarado Patrimonio de la Humanidad, este recorrido te guiará entre castillos de cuentos de hadas suspendidos sobre colinas escarpadas.",
+      distancia: "150 km",
+      destacado: "La mítica roca de Loreley y castillos medievales fortificados.",
+      duracion: "5 a 7 días"
+    },
+    {
+      id: "mosel",
+      nombre: "Mosel",
+      descripcion: "El río Mosela discurre formando curvas perfectas y pronunciadas. Su ruta destaca por los viñedos más inclinados de Europa y sus pueblos de cuento.",
+      distancia: "100 km",
+      destacado: "El espectacular mirador de la curva de Bremm y catas de vino Riesling.",
+      duracion: "3 a 5 días"
+    },
+    {
+      id: "waal",
+      nombre: "Waal",
+      descripcion: "Ubicado en los Países Bajos, el Waal ofrece un horizonte abierto inigualable. Ideal para ciclistas debido a sus infraestructuras totalmente llanas.",
+      distancia: "85 km",
+      destacado: "El histórico puente Waalbrug de Nimega y parques fluviales deltaicos.",
+      duracion: "2 a 3 días"
+    }
+  ];
+
+  return rutasDetalladas.map((ruta) => ({
+    params: { id: ruta.id },
+    props: { ruta },
+  }));
+}
+
+const { ruta } = Astro.props;
+const { id } = Astro.params;
+
+// Servidor / Backend: Obtenemos el listado de ciudades correspondiente a este ID de ruta
+// Si por alguna razón no existiera en el JSON, devolvemos un array vacío como seguridad
+const lugaresVisitados = ciudadesData[id];
+---
+
+<BaseLayout pageTitle={`Ruta del ${ruta.nombre}`}>
+  <article class="detalle-container">
+    <div class="banner-info">
+      <span><strong>Recorrido:</strong> {ruta.distancia}</span> | 
+      <span><strong>Duración recomendada:</strong> {ruta.duracion}</span>
+    </div>
+
+    <div class="cuerpo">
+      <h3>Sobre este itinerario</h3>
+      <p>{ruta.descripcion}</p>
+      
+      <div class="highlight-box">
+        <strong>Punto imperdible del trayecto:</strong> {ruta.destacado}
+      </div>
+
+      <!-- NUEVA SECCIÓN: Lugares que se visitan obtenidos del JSON backend -->
+      <section class="lugares-section">
+        <h3>Localidades e hitos del viaje</h3>
+        <p>A lo largo de este río pasarás por los siguientes puntos recomendados:</p>
+        
+        <div class="lugares-list">
+          {lugaresVisitados.map((lugar) => (
+            <div class="lugar-item">
+              <span class="badge">{lugar.tipo}</span>
+              <h4>{lugar.nombre}</h4>
+              <p>{lugar.descripcion}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+    </div>
+
+    <a href="/rutas/" class="back-link">← Volver al catálogo de rutas</a>
+  </article>
+
+  <style>
+    .detalle-container { margin-top: 1rem; }
+    .banner-info { background: var(--primary-light); padding: 1rem; border-radius: 6px; font-weight: 500; }
+    .cuerpo { margin: 2rem 0; font-size: 1.1rem; }
+    .highlight-box { border-left: 4px solid var(--primary); background: #f8fafc; padding: 1rem; margin: 1.5rem 0; border-radius: 0 4px 4px 0; }
+    
+    /* Estilos para las ciudades del JSON */
+    .lugares-section { margin-top: 3rem; border-top: 2px dashed var(--border); padding-top: 2rem; }
+    .lugares-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; margin-top: 1.5rem; }
+    .lugar-item { background: #fff; border: 1px solid var(--border); border-radius: 6px; padding: 1.25rem; position: relative; }
+    .lugar-item h4 { margin: 0.5rem 0; color: var(--text); font-size: 1.2rem; }
+    .lugar-item p { font-size: 0.95rem; color: #555; margin: 0; line-height: 1.4; }
+    .badge { display: inline-block; font-size: 0.75rem; font-weight: bold; background: #e2e8f0; color: #4a5568; padding: 0.2rem 0.5rem; border-radius: 4px; text-transform: uppercase; }
+    
+    .back-link { display: inline-block; margin-top: 2rem; color: var(--primary); text-decoration: none; font-weight: bold; }
+    .back-link:hover { text-decoration: underline; }
+  </style>
+</BaseLayout>

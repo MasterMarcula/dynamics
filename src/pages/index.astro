@@ -1,0 +1,15 @@
+---
+// src/pages/index.astro
+import BaseLayout from '../layouts/BaseLayouts.astro';
+const pageTitle = "Bienvenidos a EcoRutas";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <h2>Explora Europa desde sus ríos más majestuosos</h2>
+  <p>Ofrecemos guías detalladas y recorridos autoguiados por las cuencas fluviales más icónicas del continente. Diseñado para amantes del senderismo, el cicloturismo y la cultura.</p>
+  
+  <div style="background: var(--primary-light); padding: 1.5rem; border-radius: 8px; margin-top: 2rem;">
+    <h3>¿Por dónde empezar?</h3>
+    <p>Te recomendamos visitar nuestra sección de <a href="/rutas/">Rutas Fluviales</a> para elegir tu próxima aventura o escribirnos si tienes dudas desde nuestro apartado de contacto.</p>
+  </div>
+</BaseLayout>

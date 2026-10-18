@@ -1,0 +1,67 @@
+---
+// src/pages/contacto.astro
+import BaseLayout from '../layouts/BaseLayouts.astro';
+const pageTitle = "Contacto";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <h2>¿Tienes alguna pregunta sobre nuestros recorridos?</h2>
+  <p>Escríbenos y nuestro equipo te responderá en menos de 24 horas.</p>
+
+  <form name="contacto" method="POST" action="/gracias/" class="form-contacto">
+    <div class="form-group">
+      <label for="name">Nombre completo</label>
+      <input type="text" id="name" name="name" required />
+    </div>
+
+    <div class="form-group">
+      <label for="email">Correo electrónico</label>
+      <input type="email" id="email" name="email" required />
+    </div>
+
+    <div class="form-group">
+      <label for="message">Mensaje / Consulta</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+    </div>
+
+    <button type="submit">Enviar mensaje</button>
+  </form>
+
+  <style>
+    .form-contacto {
+      max-width: 500px;
+      background: var(--card-bg);
+      padding: 2rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      margin-top: 1.5rem;
+    }
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    button {
+      background-color: var(--primary);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 4px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    button:hover {
+      opacity: 0.9;
+    }
+  </style>
+</BaseLayout>

@@ -1,0 +1,72 @@
+---
+// src/pages/gracias.astro
+import BaseLayout from '../layouts/BaseLayouts.astro';
+const pageTitle = "¡Mensaje Enviado!";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <div class="gracias-container">
+    <div class="icon-success">✓</div>
+    <h2>¡Muchas gracias por ponerte en contacto!</h2>
+    <p>Hemos recibido tus datos y tu consulta correctamente. Uno de nuestros guías especializados revisará tu mensaje y te responderá por correo electrónico en un plazo máximo de 24 horas.</p>
+    
+    <div class="sugerencia">
+      <p>Mientras tanto, puedes seguir explorando nuestros itinerarios fluviales:</p>
+      <a href="/rutas/" class="btn-primary">Ver Rutas Disponibles</a>
+    </div>
+  </div>
+
+  <style>
+    .gracias-container {
+      text-align: center;
+      padding: 3rem 1.5rem;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      max-width: 600px;
+      margin: 2rem auto 0 auto;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    }
+    .icon-success {
+      background-color: #d1fae5;
+      color: #065f46;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      font-size: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem auto;
+    }
+    .gracias-container h2 {
+      margin-top: 0;
+      color: #065f46;
+    }
+    .gracias-container p {
+      color: #4a5568;
+      font-size: 1.1rem;
+    }
+    .sugerencia {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .sugerencia p {
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+    .btn-primary {
+      display: inline-block;
+      background-color: var(--primary);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .btn-primary:hover {
+      opacity: 0.9;
+    }
+  </style>
+</BaseLayout>

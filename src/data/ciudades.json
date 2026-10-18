@@ -1,0 +1,20 @@
+{
+  "rhin": [
+    { "nombre": "Mainz", "tipo": "Ciudad", "descripcion": "Ciudad de origen romano, famosa por el Museo de Gutenberg." },
+    { "nombre": "Bacharach", "tipo": "Pueblo", "descripcion": "Encantador pueblo medieval con murallas y torres de piedra intactas." },
+    { "nombre": "Sankt Goar", "tipo": "Pueblo", "descripcion": "Situado directamente frente a la mítica roca de Loreley." },
+    { "nombre": "Koblenz", "tipo": "Ciudad", "descripcion": "Punto estratégico donde el río Mosela confluye con el Rin." }
+  ],
+  "mosel": [
+    { "nombre": "Trier", "tipo": "Ciudad", "descripcion": "La ciudad más antigua de Alemania, con imponentes monumentos romanos." },
+    { "nombre": "Bernkastel-Kues", "tipo": "Pueblo", "descripcion": "Famoso por su icónica plaza de mercado medieval y sus viñedos." },
+    { "nombre": "Bremm", "tipo": "Pueblo", "descripcion": "Pequeña localidad al pie del viñedo más empinado de Europa." },
+    { "nombre": "Cochem", "tipo": "Pueblo", "descripcion": "Custodiado por su majestuoso castillo imperial Reichsburg." }
+  ],
+  "waal": [
+    { "nombre": "Nijmegen", "tipo": "Ciudad", "descripcion": "La urbe más antigua de los Países Bajos, repleta de vida universitaria." },
+    { "nombre": "Tiel", "tipo": "Ciudad", "descripcion": "Histórica localidad hanseática conocida por su producción frutal." },
+    { "nombre": "Zaltbommel", "tipo": "Ciudad", "descripcion": "Ciudad amurallada famosa por su silueta y torres a la orilla del Waal." },
+    { "nombre": "Gorinchem", "tipo": "Ciudad", "descripcion": "Preciosa villa medieval con las fortificaciones mejor conservadas del país." }
+  ]
+}

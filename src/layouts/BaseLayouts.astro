@@ -1,0 +1,79 @@
+---
+// src/layouts/BaseLayout.astro
+const { pageTitle } = Astro.props;
+---
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{pageTitle}</title>
+    <style is:global>
+      :root {
+        --primary: #4c1d95;
+        --primary-light: #f3e8ff;
+        --text: #333;
+        --bg: #f9f9f9;
+        --card-bg: #ffffff;
+        --border: #e2e8f0;
+      }
+      body {
+        font-family: system-ui, -apple-system, sans-serif;
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 2rem;
+        background-color: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+      }
+      header {
+        border-bottom: 2px solid var(--border);
+        padding-bottom: 1rem;
+        margin-bottom: 2rem;
+      }
+      nav {
+        display: flex;
+        gap: 1rem;
+      }
+      nav a {
+        color: var(--primary);
+        text-decoration: none;
+        font-weight: bold;
+      }
+      nav a:hover {
+        text-decoration: underline;
+      }
+      h1, h2, h3 {
+        color: var(--primary);
+      }
+      footer {
+        margin-top: 3rem;
+        padding-top: 1rem;
+        border-top: 1px solid var(--border);
+        font-size: 0.9rem;
+        color: #666;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="/">Inicio</a>
+        <a href="/about/">Acerca de</a>
+        <a href="/rutas/">Rutas Fluviales</a>
+        <a href="/contacto/">Contacto</a>
+      </nav>
+    </header>
+
+    <main>
+      <h1>{pageTitle}</h1>
+      <slot />
+    </main>
+
+    <footer>
+      <p>© {new Date().getFullYear()} EcoRutas Fluviales S.L.</p>
+    </footer>
+  </body>
+</html>

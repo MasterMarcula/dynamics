@@ -1,0 +1,85 @@
+---
+// src/pages/rutas.astro
+import BaseLayout from '../layouts/BaseLayouts.astro';
+
+const pageTitle = "Nuestras Rutas Fluviales";
+
+const rutas = [
+  {
+    slug: "rhin",
+    nombre: "Rhin",
+    corta: "Una de las rutas más majestuosas de Europa, flanqueada por espectaculares castillos e imponentes viñedos.",
+  },
+  {
+    slug: "mosel",
+    nombre: "Mosel",
+    corta: "Sigue el curso serpenteante de este encantador río rodeado de colinas empinadas y catas de vino Riesling.",
+    imagen: "https://choosewhere.com"
+  },
+  {
+    slug: "waal",
+    nombre: "Waal",
+    corta: "Ideal para cicloturismo plano por los Países Bajos continentales, atravesando llanuras, diques y puentes de diseño.",
+    imagen: "https://locationscout.net"
+  }
+];
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <h2>Selecciona tu próximo destino para ver el itinerario completo</h2>
+  
+  <div class="rutas-grid">
+    {rutas.map((ruta) => (
+      <div class="ruta-card">
+        <div class="image-placeholder" style="background-color: #ddd; height: 180px; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; color: #555; background-image: url('#'); background-size: cover;">
+          <span>Ruta del {ruta.nombre}</span>
+        </div>
+        <div class="card-content">
+          <h3>Ruta del {ruta.nombre}</h3>
+          <p>{ruta.corta}</p>
+          <a href={`/rutas/${ruta.slug}`} class="btn">Explorar detalles →</a>
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <style>
+    .rutas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .ruta-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    }
+    span {
+      font-size: 1.2rem;
+    }
+    .card-content {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+    .card-content h3 {
+      margin-top: 0;
+    }
+    .btn {
+      margin-top: auto;
+      display: inline-block;
+      color: var(--primary);
+      font-weight: bold;
+      text-decoration: none;
+    }
+    .btn:hover {
+      text-decoration: underline;
+    }
+  </style>
+</BaseLayout>
