@@ -1,43 +1,62 @@
-# Astro Starter Kit: Minimal
+# Nombre del proyecto
 
-```sh
-npm create astro@latest -- --template minimal
+En este web-site, la agencia de viajes y turismo le muestra a los potenciales clientes las rutas disponibles en la línea de cruceros.
+
+## Problema y solución
+
+**Problema:**  
+Dada la cantidad de clientes que quieren conocer el producto, el web-site reduce el tiempo de atención al cliente y le da la posibilidad de contratar un servicio, preguntar precios, hacer reservas (solicitarlas) y conocer los alcances y limitaciones del servicio.
+
+**Público:**  
+El web-site está pensado para el uso por parte de clientes de la agencia de viajes y turismo.
+
+**Solución:**  
+El web-site sólo tiene fines informativos con la posibilidad de solicitar una cita para ser atendido y gestionar, con el personal de atención al público, el servicio deseado.
+
+## Enlaces
+
+- Frontend publicado: https://webderecetas-intento2.netlify.app/
+- API publicada: API local, no está publicada aparte.
+- Repositorio frontend: [agregar enlace]
+- Repositorio backend: [agregar enlace]
+
+## Tecnologías utilizadas
+
+### Frontend
+
+- Astro
+- React
+- HTML
+- CSS
+- JavaScript
+
+### Backend
+
+- Node.js
+- Express
+- MySQL
+
+### Despliegue
+
+- Frontend: Netlify
+- Backend: No requiere backend.
+- Base de datos: Los datos están alojados en un archivo JSON local.
+
+## Instalación local
+
+### Frontend
+
+```bash
+git clone https://github.com/MasterMarcula/dynamics.git
+cd dynamics
+pnpm install
+pnpm dev
 ```
+*** No fue necesario crear un archivo de configuraciones, la página es estática, no interactiva.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+### Backend
+*** El web-site no tiene backend.
 
-## 🚀 Project Structure
+## Base de datos
 
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- Los datos editables son mínimos, sólo la lista de puertos por cada ruta y están alojados en un archivo JSON almacenado localmente.
