@@ -16,10 +16,9 @@ El web-site está pensado para el uso por parte de clientes de la agencia de via
 El web-site sólo tiene fines informativos con la posibilidad de solicitar una cita para ser atendido y gestionar, con el personal de atención al público, el servicio deseado.
 
 ## Enlaces
-
-- Frontend publicado: https://webderecetas-intento2.netlify.app/
+- Frontend publicado: (https://ecorutas-turismo.netlify.app/)
 - API publicada: API local, no está publicada aparte.
-- Repositorio frontend: [agregar enlace]
+- Repositorio frontend: (https://ecorutas-turismo.netlify.app/)
 - Repositorio backend: [agregar enlace]
 
 ## Tecnologías utilizadas
